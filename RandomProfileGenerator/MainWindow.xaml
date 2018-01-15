@@ -5,8 +5,44 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RandomProfileGenerator"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="350" Width="525" Closing="Window_Closing">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
         
+        <TabControl Grid.Row="0" x:Name="tabControl"   VerticalAlignment="Stretch" >
+            <TabItem Header="生成页" TabIndex="0">
+                <Grid Background="White">
+                
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="5*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="10*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" HorizontalAlignment="Left">姓名</Label>
+                        <TextBox x:Name="NameInput" Grid.Column="1" MaxLines="1" />
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Button HorizontalAlignment="Center" Padding="20,0" Margin="5" Click="Button_Click">
+                            <TextBlock Text="生成" ></TextBlock>
+                        </Button>
+                    </Grid>
+                    <Grid Grid.Row="2">
+                        <GroupBox Header="结果">
+                            <TextBox x:Name="textresult"></TextBox>
+                        </GroupBox>
+                    </Grid>
+                </Grid>
+            </TabItem>
+            
+            
+        </TabControl>
+
     </Grid>
 </Window>
